@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>REGISTRATION PAGE</title>
+<style type="text/css">
+a.back {
+	float: right;
+}
+
+h1 {
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<center>
+		<h1>Welcome to Dynamo's Registration Page...!!</h1>
+		<a class="back" href="/">Go Back..</a>
+		<h3>If you are visiting First time into my page....,Kindly
+			Register!!! through Registration Form</h3>
+		<i><h2>
+				Or else, Please
+				<mark>
+					<a href="/login">click here</a>
+				</mark>
+				for Login
+			</h2></i>
+		<form th:action="@{/register}" method="post">
+			<table>
+				<tr>
+					<th colspan="3">Registration Form</th>
+				</tr>
+				<tr>
+					<td><label>firstName</label></td>
+					<td><input type="text" th:field="*{customer.firstName}">
+				</tr>
+				<tr>
+					<td><label>lastName</label></td>
+					<td><input type="text" th:field="*{customer.lastName}">
+				</tr>
+				<tr>
+					<td><label>MobileNumber</label></td>
+					<td><input type="number" th:field="*{customer.mobileNo}">
+				</tr>
+				<tr>
+					<td><label>EmailId</label></td>
+					<td><input type="email" th:field="*{customer.emailId}">
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="password" th:field="*{customer.password}"
+						required="required"></td>
+				</tr>
+				<tr>
+					<td><label>Gender :</label></td>
+					<td><input type="radio" th:field="*{customer.gender}"
+						value="male">Male <input type="radio"
+						th:field="*{customer.gender}" value="female">female</td>
+				</tr>
+				<tr>
+					<td><label>Pincode</label></td>
+					<td><input type="number" th:field="*{customer.pincode}">
+				</tr>
+				<tr>
+					<td><label>AddressLine1</label></td>
+					<td><textarea rows="3" cols="20"
+							th:field="*{customer.addressLine1}"></textarea></td>
+				</tr>
+				<tr>
+					<td><label>AddressLine2</label></td>
+					<td><textarea rows="3" cols="20"
+							th:field="*{customer.addressLine2}"></textarea></td>
+				</tr>
+				<tr>
+					<td><label>City</label></td>
+					<td><select th:field="*{customer.city}">
+							<option value="Hyderabad">Hyderabad</option>
+							<option value="karnataka">karnataka</option>
+							<option value="kurnool">kurnool</option>
+							<option value="Pune">Pune</option>
+							<option value="Kerala">Kerala</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label>State</label></td>
+					<td><select th:field="*{customer.state}">
+							<option value="Telangana">Telangana</option>
+							<option value="karnataka">karnataka</option>
+							<option value="Andrapradesh">Andrapradesh</option>
+							<option value="Maharastra">Maharastra</option>
+							<option value="Kerala">Kerala</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="Register" value="Register"></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>
